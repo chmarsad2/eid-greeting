@@ -117,18 +117,25 @@
       text-align: center;
       opacity: 0;
       animation: fadeInFunny 2s ease forwards;
+      padding: 20px;
+      width: 100%;
+      box-sizing: border-box;
     }
 
     .funny-message h2 {
       font-size: 2.2rem;
-      color: #ffcc80;
+      background: linear-gradient(45deg, #ff8a65, #ffd54f);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
       margin-bottom: 10px;
       animation: bounceIn 1.5s ease forwards;
     }
 
     .funny-message p {
       font-size: 1.4rem;
-      color: #ffab91;
+      background: linear-gradient(45deg, #81d4fa, #b388ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
       animation: fadeIn 2s ease forwards;
     }
 
@@ -178,16 +185,31 @@
       100% { opacity: 1; }
     }
 
-    .moon {
-      top: 40px;
-      right: 60px;
-      width: 100px;
-      height: 100px;
-      background: radial-gradient(circle, #fff, #ccc);
-      border-radius: 50%;
-      box-shadow: 0 0 40px 15px rgba(255,255,255,0.3);
-      animation: glow 3s infinite ease-in-out;
-    }
+ .moon {
+  top: 30px;
+  right: 30px;
+  width: 70px;
+  height: 70px;
+  background: #fff;
+  border-radius: 50%;
+  position: absolute;
+  box-shadow: 0 0 30px 10px rgba(255,255,255,0.3);
+  overflow: hidden;
+  animation: glow 3s infinite ease-in-out;
+}
+
+.moon::before {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 15px;
+  width: 70px;
+  height: 70px;
+  background: #1b263b; /* same as background color */
+  border-radius: 50%;
+}
+
+
 
     @keyframes glow {
       0% { box-shadow: 0 0 20px 10px rgba(255,255,255,0.2); }
@@ -261,8 +283,19 @@
         font-size: 1.8rem;
         padding: 0 15px;
       }
+
       input {
         width: 220px;
+      }
+
+      .funny-message h2 {
+        font-size: 1.8rem;
+        padding: 0 10px;
+      }
+
+      .funny-message p {
+        font-size: 1.2rem;
+        padding: 0 15px;
       }
     }
   </style>
